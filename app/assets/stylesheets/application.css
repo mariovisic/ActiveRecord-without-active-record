@@ -43,3 +43,28 @@ body, html {
 .main {
   padding-left: 10px;
 }
+
+.main-nav {
+  background: #ccc;
+  margin-bottom: 20px;
+}
+
+.main-nav ul {
+  margin: 0;
+  padding: 10px;
+}
+.main-nav li {
+  display: inline;
+  padding: 0 10px;
+}
+
+.main-nav a {
+  color: black;
+  text-decoration: none;
+}
+
+.main-nav a:hover {
+  color: blue;
+
+}
+

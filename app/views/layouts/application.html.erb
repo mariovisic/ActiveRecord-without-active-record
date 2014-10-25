@@ -19,8 +19,18 @@
   <div class="flash--error"><%= flash[:error] %></div>
 <% end %>
 
+<nav class="main-nav">
+  <ul>
+    <% if user_signed_in? %>
+      <li><%= link_to 'Logout', sessions_path, method: :delete %></li>
+    <% else %>
+      <li><%= link_to 'Login', new_sessions_path %></li>
+      | 
+      <li><%= link_to 'Sign Up', new_registrations_path %></li>
+    <% end %>
+  </ul>
+</nav>
 
-<h2></h2>
 
 <div class="main">
   <%= yield %>

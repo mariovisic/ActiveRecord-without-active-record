@@ -4,16 +4,19 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params.slice(:username))
+    @user = User.new(user_params)
 
     if authentication_successful?
-      flash[:notice] = "Well done #{user.display_name}, successfully logged in"
-      session[:user_id] = authenticated_user.id
-      redirect_to posts_path
+      login_user(@user)
     else
       flash[:error] = 'Your username or password is incorrect'
       render :new
     end
+  end
+
+  def destroy
+    session.delete(:user_id)
+    redirect_to root_path
   end
 
   private

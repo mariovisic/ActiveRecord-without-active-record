@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  resources :sessions, only: [:new, :create]
+  resource  :sessions, only: [:new, :create, :destroy]
+  resource  :registrations, only: [:new, :create]
   resources :posts, only: [:index]
 end

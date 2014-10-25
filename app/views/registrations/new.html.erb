@@ -1,0 +1,37 @@
+<% provide :title, 'Login' %>
+
+<%= form_for @user, url: registrations_path do |f| %>
+
+  <% if @user.errors.present? %>
+    <%= @user.errors.full_messages.to_sentence %>
+  <% end %>
+
+  <div>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div>
+
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+
+  <div>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <div>
+    <%= f.label :full_name %>
+    <%= f.text_field :full_name %>
+  </div>
+
+  <div>
+    <%= f.submit 'Register' %>
+  </div>
+<% end %>

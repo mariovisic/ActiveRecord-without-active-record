@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   attr_accessor :password_confirmation
 
   validates :password_confirmation, presence: true, if: :password
-  validates :password, presence: true, on: :create
+  validates :password, presence: true, confirmation: true, on: :create
   validates :username, :email, presence: true
   validates :username, uniqueness: true
 

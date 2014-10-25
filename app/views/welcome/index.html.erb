@@ -1,0 +1,5 @@
+<% provide :title, 'Welcome' %>
+
+<% if user_signed_in? %>
+  <%= link_to 'All Posts', posts_path %>
+<% end %>
