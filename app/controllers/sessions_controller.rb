@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     @user = User.new(user_params.slice(:username))
 
     if authentication_successful?
-      flash[:success] = 'Well done, successfully logged in'
+      flash[:notice] = "Well done #{user.display_name}, successfully logged in"
       session[:user_id] = authenticated_user.id
       redirect_to posts_path
     else

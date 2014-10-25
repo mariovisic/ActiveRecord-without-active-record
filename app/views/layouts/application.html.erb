@@ -11,8 +11,8 @@
 
 <h1><%= content_for :title %></h1>
 
-<% if flash[:success].present? %>
-  <div class="flash--success"><%= flash[:success] %></div>
+<% if flash[:notice].present? %>
+  <div class="flash--success"><%= flash[:notice] %></div>
 <% end %>
 
 <% if flash[:error].present? %>
