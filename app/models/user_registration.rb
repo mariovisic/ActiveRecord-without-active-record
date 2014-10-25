@@ -8,15 +8,6 @@ class UserRegistration
   validates :password, confirmation: true
   validate :ensure_username_unique
 
-  # FIXME: This logic is duplicated from User, please move it to a shared location
-  def display_name
-    if full_name.present?
-      full_name
-    else
-      username
-    end
-  end
-
   def save
     create_user_record && send_welcome_email
   end

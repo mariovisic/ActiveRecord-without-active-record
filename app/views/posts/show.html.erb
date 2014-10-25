@@ -12,7 +12,7 @@
 
 <p>
   <strong>Author:</strong>
-  <%= @post.author.display_name %>
+  <%= UserDisplayName.new(@post.author) %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

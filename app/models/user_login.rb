@@ -11,14 +11,6 @@ class UserLogin
     @user ||= UserRepository.find_for_authentication(username)
   end
 
-  def display_name
-    if user.full_name.present?
-      user.full_name
-    else
-      user.username
-    end
-  end
-
   private
 
   def password_matches?

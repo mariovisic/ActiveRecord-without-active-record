@@ -1,3 +1,3 @@
-Hi there <%= @user.display_name %>
+Hi there <%= UserDisplayName.new(@user) %>
 
-<%= @post.author.display_name %> has created a new post. You can view it here <%= post_url(@post) %>
+<%= UserDisplayName.new(@post.author) %> has created a new post. You can view it here <%= post_url(@post) %>
