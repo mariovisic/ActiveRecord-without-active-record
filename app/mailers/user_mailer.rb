@@ -6,4 +6,11 @@ class UserMailer < ActionMailer::Base
 
     mail to: user.email, subject: 'Welcome to the site'
   end
+
+  def new_post(user, post)
+    @user = user
+    @post = post
+
+    mail to: user.email, subject: "New post: #{post.title}"
+  end
 end
