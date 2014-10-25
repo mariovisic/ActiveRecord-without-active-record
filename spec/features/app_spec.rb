@@ -21,7 +21,7 @@ describe 'my application' do
   end
 
   context 'when the user has an account' do
-    let!(:user) { User.create!(username: 'joe', password: 'super secure', password_confirmation: 'super secure', email: 'joe@io.co') }
+    let!(:user) { User.create!(username: 'joe', hashed_password: BCrypt::Password.create('super secure'), email: 'joe@io.co') }
 
     it 'allows them to login' do
       visit root_path

@@ -1,9 +1,9 @@
 <% provide :title, 'Login' %>
 
-<%= form_for @user, url: registrations_path do |f| %>
+<%= form_for @user_registration, url: registrations_path do |f| %>
 
-  <% if @user.errors.present? %>
-    <div class="errors"><%= @user.errors.full_messages.to_sentence %></div>
+  <% if @user_registration.errors.present? %>
+    <div class="errors"><%= @user_registration.errors.full_messages.to_sentence %></div>
   <% end %>
 
   <div>

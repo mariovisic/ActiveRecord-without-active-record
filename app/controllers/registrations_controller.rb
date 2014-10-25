@@ -1,13 +1,13 @@
 class RegistrationsController < ApplicationController
   def new
-    @user = User.new
+    @user_registration = UserRegistration.new
   end
 
   def create
-    @user = User.new(user_params)
+    @user_registration = UserRegistration.new(user_registration_params)
 
-    if @user.save
-      login_user(@user, "Well done #{@user.display_name}, registration complete")
+    if @user_registration.save
+      login_user(@user_registration.user, "Well done #{@user_registration.display_name}, registration complete")
     else
       render :new
     end
@@ -15,8 +15,7 @@ class RegistrationsController < ApplicationController
 
   private
 
-
-  def user_params
-    params.require(:user).permit(:email, :username, :password, :password_confirmation, :full_name)
+  def user_registration_params
+    params.require(:user_registration).permit(:email, :username, :password, :password_confirmation, :full_name)
   end
 end

@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
   end
 
   def authenticated_user
-    @authenticated_user ||= User.find_for_authentication(username)
+    @authenticated_user ||= UserRepository.find_for_authentication(username)
   end
 
   def user_params
