@@ -1,6 +1,6 @@
 <% provide :title, 'Login' %>
 
-<%= form_for @user, url: sessions_path do |f| %>
+<%= form_for @user_login, url: sessions_path do |f| %>
   <div>
     <%= f.label :username %>
     <%= f.text_field :username %>

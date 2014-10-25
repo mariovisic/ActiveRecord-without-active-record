@@ -1,13 +1,13 @@
 class SessionsController < ApplicationController
   def new
-    @user = User.new
+    @user_login = UserLogin.new
   end
 
   def create
-    @user = User.new(user_params)
+    @user_login = UserLogin.new(user_login_params)
 
-    if authentication_successful?
-      login_user(authenticated_user, "Well done #{@user.display_name}, successfully logged in")
+    if @user_login.successful?
+      login_user(@user_login.user, "Well done #{@user_login.display_name}, successfully logged in")
     else
       flash[:error] = 'Your username or password is incorrect'
       render :new
@@ -21,23 +21,7 @@ class SessionsController < ApplicationController
 
   private
 
-  def authentication_successful?
-    authenticated_user && authenticated_user.password_matches?(password)
-  end
-
-  def authenticated_user
-    @authenticated_user ||= UserRepository.find_for_authentication(username)
-  end
-
-  def user_params
-    params.require(:user).permit(:username, :password)
-  end
-
-  def username
-    user_params[:username]
-  end
-
-  def password
-    user_params[:password]
+  def user_login_params
+    params.require(:user_login).permit(:username, :password)
   end
 end
