@@ -1,0 +1,17 @@
+<% provide :title, 'Login' %>
+
+<%= form_for @user, url: sessions_path do |f| %>
+  <div>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div>
+
+  <div>
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+  </div>
+
+  <div>
+    <%= f.submit 'Login' %>
+  </div>
+<% end %>

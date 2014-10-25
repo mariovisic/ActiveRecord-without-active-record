@@ -8,7 +8,23 @@
 </head>
 <body>
 
-<%= yield %>
+
+<h1><%= content_for :title %></h1>
+
+<% if flash[:success].present? %>
+  <div class="flash--success"><%= flash[:success] %></div>
+<% end %>
+
+<% if flash[:error].present? %>
+  <div class="flash--error"><%= flash[:error] %></div>
+<% end %>
+
+
+<h2></h2>
+
+<div class="main">
+  <%= yield %>
+</div>
 
 </body>
 </html>

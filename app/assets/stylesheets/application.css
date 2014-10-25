@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+
+
+h1 {
+  font-family: 'Francois One';
+  font-size: 48px;
+}
+
+body, html {
+  font-family: 'Helvetica Neue';
+  margin: 0;
+  padding: 0;
+}
+
+.flash--success {
+  background: green;
+  padding: 20px 0;
+  text-align: center;
+  color: white;
+}
+
+.flash--error {
+  background: red;
+  padding: 20px 0;
+  text-align: center;
+  color: white;
+}
+
+.main {
+  padding-left: 10px;
+}
