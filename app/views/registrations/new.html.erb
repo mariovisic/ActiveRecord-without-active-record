@@ -3,7 +3,7 @@
 <%= form_for @user, url: registrations_path do |f| %>
 
   <% if @user.errors.present? %>
-    <%= @user.errors.full_messages.to_sentence %>
+    <div class="errors"><%= @user.errors.full_messages.to_sentence %></div>
   <% end %>
 
   <div>
