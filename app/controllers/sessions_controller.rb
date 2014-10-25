@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     @user = User.new(user_params)
 
     if authentication_successful?
-      login_user(@user)
+      login_user(authenticated_user, "Well done #{@user.display_name}, successfully logged in")
     else
       flash[:error] = 'Your username or password is incorrect'
       render :new

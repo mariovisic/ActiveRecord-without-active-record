@@ -7,7 +7,7 @@ class RegistrationsController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      login_user(@user)
+      login_user(@user, "Well done #{@user.display_name}, registration complete")
     else
       render :new
     end

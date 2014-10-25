@@ -14,13 +14,13 @@ class ApplicationController < ActionController::Base
 
   def ensure_authenticated
     unless user_signed_in?
-      redirect_to new_session_path, flash: { error: 'You need to be logged in to view this page' }
+      redirect_to new_sessions_path, flash: { error: 'You need to be logged in to view this page' }
     end
   end
 
-  def login_user(user)
-    flash[:notice] = "Well done #{@user.display_name}, successfully logged in"
-    session[:user_id] = authenticated_user.id
+  def login_user(user, notice)
+    flash[:notice] = notice
+    session[:user_id] = user.id
     redirect_to posts_path
   end
 end
