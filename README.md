@@ -5,4 +5,4 @@ ActiveRecord without active record presentation. There are two tags, fistly
 `active_record` which is the codebase pre-refactoring. The second is
 `without_active_record` which is the code post refactoring.
 
-You can checkout between these two tags to get a sense of the refactoring.
+You can checkout between these two tags to get a sense of the refactoring or [view the full set of changes here](https://github.com/mariovisic/ActiveRecord-without-active-record/compare/active_record...without_active_record)
